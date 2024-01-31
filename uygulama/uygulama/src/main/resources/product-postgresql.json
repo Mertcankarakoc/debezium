@@ -1,0 +1,24 @@
+{
+  "name": "dgn",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max" : 1,
+    "database.history.kafka.bootstrap.servers" : "kafka:9092",
+    "database.history.kafka.topic" : "schema-changes.movies",
+    "database.hostname": "db",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.password": "postgres",
+    "database.dbname" : "dgn",
+    "database.server.name" : "db",
+    "tombstones.on.delete" : "false",
+    "topic.prefix": "product",
+    "table.include.list" : "public.product",
+    "heartbeat.interval.ms" : "5000",
+    "key.converter" : "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable" : "false",
+    "value.converter" : "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable" : "false",
+    "plugin.name" : "pgoutput"
+  }
+}
